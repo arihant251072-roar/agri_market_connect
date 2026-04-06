@@ -1,0 +1,8 @@
+# backend/main.py
+from fastapi import FastAPI, UploadFile
+from routers import farmer, buyer
+
+app = FastAPI(title="AGRI-MARKET CONNECT")
+
+app.include_router(farmer.router, prefix="/farmer")
+app.include_router(buyer.router, prefix="/buyer")
